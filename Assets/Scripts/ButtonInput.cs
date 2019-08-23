@@ -7,17 +7,23 @@ public class ButtonInput : MonoBehaviour
 
     public bool left;
 
-    public FiremanController fireman;
+    public delegate void ButtonPressed();
+    public static event ButtonPressed OnLeft;
+    public static event ButtonPressed OnRight;
+
+    //public FiremanController fireman;
 
     private void OnMouseDown()
     {
-        if (left)
+        if (OnLeft != null && left) 
         {
-            fireman.OnLeftPressed();
+            OnLeft();
+           // fireman.OnLeftPressed();
         }
-        else
+        else if (OnRight != null)
         {
-            fireman.OnRightPressed();
+            OnRight();
+           // fireman.OnRightPressed();
         }
 
     }

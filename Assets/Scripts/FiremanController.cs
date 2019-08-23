@@ -6,20 +6,54 @@ public class FiremanController : MonoBehaviour
 {
     public List<Transform> positions = new List<Transform>();
 
+    private int currentPosition = 1;
 
-    private void Start()
+    private void OnEnable()
     {
-        transform.position = positions[1].position;
+        ButtonInput.OnLeft += OnLeftPressed;
+        ButtonInput.OnRight += OnRightPressed;
     }
 
-    public void OnLeftPressed()
-    {
-        Debug.Log("Move left");
+        private void OnDisable()
+        {
+            ButtonInput.OnLeft -= OnLeftPressed;
+            ButtonInput.OnRight -= OnRightPressed;
+
+        }
+
+        private void Start()
+        {
+            UpdatePosition();
+        }
+
+        public void OnLeftPressed()
+        {
+
+            if (currentPosition > 0)
+            {
+                currentPosition--;
+                UpdatePosition();
+            }
+
+        }
+
+        public void OnRightPressed()
+        {
+            if (currentPosition < positions.Count - 1)
+            {
+                currentPosition++;
+                UpdatePosition();
+            }
+
+        }
+
+        private void UpdatePosition()
+        {
+            transform.position = positions[currentPosition].position;
+        }
+
     }
 
-    public void OnRightPressed()
-    {
-        Debug.Log("Move right");
-    }
 
-}
+
+
