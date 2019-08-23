@@ -12,4 +12,14 @@ public class FiremanController : MonoBehaviour
         transform.position = positions[1].position;
     }
 
+    public void OnLeftPressed()
+    {
+        Debug.Log("Move left");
+    }
+
+    public void OnRightPressed()
+    {
+        Debug.Log("Move right");
+    }
+
 }
