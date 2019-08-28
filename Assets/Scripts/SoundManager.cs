@@ -17,15 +17,14 @@ public class SoundManager : MonoBehaviour
         ButtonInput.OnRight -= ButtonInput_OnRight;
     }
 
-    void ButtonInput_OnRight()
-    {
-        Debug.Log("Beep Right");
-    }
-
-
     void ButtonInput_OnLeft()
     {
-        Debug.Log("Beep Left");
+        Debug.Log("PIP Left");
+    }
+
+    void ButtonInput_OnRight()
+    {
+        Debug.Log("PIP Right");
     }
 
 }
