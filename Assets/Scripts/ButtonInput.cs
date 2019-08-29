@@ -5,7 +5,15 @@ using UnityEngine;
 public class ButtonInput : MonoBehaviour
 {
 
-    public bool left;
+    public enum Button
+    {
+        left,
+        right
+    }
+
+    //public bool left;
+    public Button button;
+     
 
     public delegate void ButtonPressed();
     public static event ButtonPressed OnLeft;
@@ -15,12 +23,12 @@ public class ButtonInput : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (OnLeft != null && left) 
+        if (OnLeft != null && button == Button.left) 
         {
             OnLeft();
            // fireman.OnLeftPressed();
         }
-        else if (OnRight != null)
+        else if (OnRight != null && button == Button.right)
         {
             OnRight();
            // fireman.OnRightPressed();
