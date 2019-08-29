@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c80b69cd1324461bd7dde1001df91d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: 0
+  button: 1
 --- !u!1 &309877719
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +383,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654011820637445888, guid: 0faea7fd80b364b4bb776a26aa63840f,
+        type: 3}
+      propertyPath: m_TagString
+      value: DangerPosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654011821241770580, guid: 0faea7fd80b364b4bb776a26aa63840f,
+        type: 3}
+      propertyPath: m_TagString
+      value: DangerPosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654011821736083515, guid: 0faea7fd80b364b4bb776a26aa63840f,
+        type: 3}
+      propertyPath: m_TagString
+      value: DangerPosition
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0faea7fd80b364b4bb776a26aa63840f, type: 3}
@@ -753,7 +768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumperPrefab: {fileID: 1530574949798072459, guid: 0faea7fd80b364b4bb776a26aa63840f,
     type: 3}
-  spawnDelay: 3
+  spawnDelay: 5
   deltaRandomSpawning: 0.5
 --- !u!1 &1933852517
 GameObject:
@@ -855,7 +870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c80b69cd1324461bd7dde1001df91d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: 1
+  button: 0
 --- !u!1 &2082607975
 GameObject:
   m_ObjectHideFlags: 0
