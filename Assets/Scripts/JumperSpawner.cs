@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+    [RequireComponent(typeof(GameManager))]
 public class JumperSpawner : MonoBehaviour
 {
     [SerializeField]
     GameObject jumperPrefab;
 
     float lastSpawnTime;
+    //GameManager gameManager;
 
     [Range(0, 5)]
     public float spawnDelay = 3.0f;
@@ -22,6 +24,9 @@ public class JumperSpawner : MonoBehaviour
         {
             return;
         }
+
+        //gameManager = GetComponent<GameManager>();
+
         randomSpawnDelay = spawnDelay;
         SpawnJumper();
     }
@@ -38,6 +43,10 @@ public class JumperSpawner : MonoBehaviour
     {
         lastSpawnTime = Time.time;
         randomSpawnDelay = Random.Range(spawnDelay - deltaRandomSpawning, spawnDelay + deltaRandomSpawning);
-        Instantiate(jumperPrefab);
+        GameObject jumper =  Instantiate(jumperPrefab);
+
+        //JumperController jumperController = jumper.GetComponentInChildren<JumperController>();
+
+        //jumperController.gameManager = gameManager;
     }
 }
