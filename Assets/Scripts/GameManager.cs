@@ -21,13 +21,11 @@ public class GameManager : MonoBehaviour
 
     public void JumperCrashed()
     {
-        Debug.Log("Crash");
         lives--;
     }
 
     public void JumperSaved()
     {
-        Debug.Log("Saved");
         points++;
     }
 }
