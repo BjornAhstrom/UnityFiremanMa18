@@ -4,10 +4,11 @@ using UnityEngine;
 using TMPro;
 public class GameManager : MonoBehaviour
 {
-    public int lives = 3;
+    public int StartLives = 3;
     int points = 0;
 
     public TextMeshPro scoreText;
+    public LivesController livesController;
 
     private void OnEnable()
     {
@@ -23,12 +24,17 @@ public class GameManager : MonoBehaviour
 
     public void JumperCrashed()
     {
-        lives--;
+        
+        if (!livesController.RemoveLifes())
+        {
+            Debug.Log("Game over");
+        }
     }
 
     private void Start()
     {
         UpdateScoreText();
+        livesController.InitializedLives(StartLives);
     }
 
     public void JumperSaved()
