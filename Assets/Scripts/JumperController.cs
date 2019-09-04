@@ -25,6 +25,9 @@ public class JumperController : MonoBehaviour
     //[HideInInspector]
     //public bool test
 
+    [HideInInspector]
+    public JumperSpawner jumperSpawner;
+
     private void Start()
     {
         UpdatePosition();
@@ -119,6 +122,9 @@ public class JumperController : MonoBehaviour
     {
         GameObject parent = transform.parent.gameObject;
 
-        Destroy(parent);
+        jumperSpawner.DestroyJumper(parent);
+        //GameObject parent = transform.parent.gameObject;
+
+        //Destroy(parent);
     }
 }
