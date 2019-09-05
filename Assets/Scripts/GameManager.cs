@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+
 public class GameManager : MonoBehaviour
 {
     string sceneName = "Main";
     public int StartLives = 3;
-    int points = 0;
+    private int points = 0;
 
     public TextMeshPro scoreText;
     public LivesController livesController;
@@ -33,6 +34,11 @@ public class GameManager : MonoBehaviour
         livesController.InitializedLives(StartLives);
         jumperSpawner = GetComponent<JumperSpawner>();
         gameOverSign.SetActive(false);
+    }
+
+    public int Points()
+    {
+        return points;
     }
 
     public void JumperCrashed()

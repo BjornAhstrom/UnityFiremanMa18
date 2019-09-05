@@ -9,7 +9,8 @@ public class JumperSpawner : MonoBehaviour
     GameObject jumperPrefab;
 
     float lastSpawnTime;
-    //GameManager gameManager;
+    public float spawnDelayDecreaseSpeed = 0.02f;
+    GameManager gameManager;
 
     [Range(0, 5)]
     public float spawnDelay = 3.0f;
@@ -28,7 +29,7 @@ public class JumperSpawner : MonoBehaviour
             return;
         }
 
-        //gameManager = GetComponent<GameManager>();
+        gameManager = GetComponent<GameManager>();
 
         randomSpawnDelay = spawnDelay;
         SpawnJumper();
@@ -45,7 +46,8 @@ public class JumperSpawner : MonoBehaviour
     private void SpawnJumper()
     {
         lastSpawnTime = Time.time;
-        randomSpawnDelay = Random.Range(spawnDelay - deltaRandomSpawning, spawnDelay + deltaRandomSpawning);
+        float delay = Mathf.Clamp(spawnDelay - (spawnDelayDecreaseSpeed * gameManager.Points()), deltaRandomSpawning, spawnDelay);
+        randomSpawnDelay = Random.Range(delay - deltaRandomSpawning, delay + deltaRandomSpawning);
 
         // Skapa Jumper
         GameObject jumper =  Instantiate(jumperPrefab);

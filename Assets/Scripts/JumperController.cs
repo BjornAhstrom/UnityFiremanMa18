@@ -87,7 +87,6 @@ public class JumperController : MonoBehaviour
                 {
                     OnJumperCrash();
                 }
-                
             }
             else
             {

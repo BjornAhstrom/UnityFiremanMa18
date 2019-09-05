@@ -335,10 +335,9 @@ GameObject:
   m_Component:
   - component: {fileID: 58337215}
   - component: {fileID: 58337216}
-  - component: {fileID: 58337217}
   m_Layer: 8
   m_Name: Right-input
-  m_TagString: Untagged
+  m_TagString: Right
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -383,19 +382,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.611939, y: 11.988459}
   m_EdgeRadius: 0
---- !u!114 &58337217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 58337214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58c80b69cd1324461bd7dde1001df91d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: 1
 --- !u!1 &296582357
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,13 +597,14 @@ GameObject:
   m_Component:
   - component: {fileID: 309877721}
   - component: {fileID: 309877720}
+  - component: {fileID: 309877722}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &309877720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,6 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed60225cb8ad04f9ba81c805d1a9a271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beep: {fileID: 8300000, guid: 889c8c0d9bc2f4a42af8b393781b641a, type: 3}
 --- !u!4 &309877721
 Transform:
   m_ObjectHideFlags: 0
@@ -644,6 +632,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &309877722
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309877719}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,11 +882,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7654011821205009551, guid: 0faea7fd80b364b4bb776a26aa63840f,
-        type: 3}
-      propertyPath: gameManager
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0faea7fd80b364b4bb776a26aa63840f, type: 3}
@@ -1038,6 +1117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1469901307}
+  - component: {fileID: 1469901308}
   m_Layer: 0
   m_Name: Input
   m_TagString: Untagged
@@ -1061,6 +1141,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1469901308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469901306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c80b69cd1324461bd7dde1001df91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1479784654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,7 +1340,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumperPrefab: {fileID: 1530574949798072459, guid: 0faea7fd80b364b4bb776a26aa63840f,
     type: 3}
-  spawnDelay: 1.28
+  spawnDelayDecreaseSpeed: 0.02
+  spawnDelay: 3.06
   deltaRandomSpawning: 0.5
 --- !u!1 &1648273680
 GameObject:
@@ -1324,8 +1417,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648273680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.32, y: -0.692, z: 0}
-  m_LocalScale: {x: 59.71028, y: 260.4356, z: 1}
+  m_LocalPosition: {x: -10.166, y: -0.773, z: 0}
+  m_LocalScale: {x: 94.74159, y: 256.25928, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -1492,10 +1585,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1988544920}
   - component: {fileID: 1988544921}
-  - component: {fileID: 1988544922}
   m_Layer: 8
   m_Name: Left-input
-  m_TagString: Untagged
+  m_TagString: Left
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1540,19 +1632,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.9031184, y: 1.0318359}
   m_EdgeRadius: 0
---- !u!114 &1988544922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1988544919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58c80b69cd1324461bd7dde1001df91d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: 0
 --- !u!1 &1994339628
 GameObject:
   m_ObjectHideFlags: 0
